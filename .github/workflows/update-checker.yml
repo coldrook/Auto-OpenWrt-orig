@@ -12,9 +12,9 @@
 name: Update_Checker
 
 env:
-  REPO_URL_Lede: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH_Lede: master
-  REPO_PATH_Lede : "lede"
+  REPO_URL_Lede: https://github.com/openwrt/openwrt
+  REPO_BRANCH_Lede: openwrt-22.03
+  REPO_PATH_Lede : "openwrt"
   
   REPO_URL_HelloWorld: https://github.com/fw876/helloworld
   REPO_BRANCH_HelloWorld: master
