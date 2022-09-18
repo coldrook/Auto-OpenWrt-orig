@@ -35,8 +35,8 @@ rm -rf package/feeds/xiangfeidexiaohuo/luci-app-turboacc
 #cp -r -f ./feeds/xiangfeidexiaohuo/files/udpxy.lua #./feeds/luci/applications/luci-app-udpxy/luasrc/model/cbi
 
 ##fixed mosdns
-# rm -rf ./feeds/packages/net/mosdns
-# cp -r -f ./feeds/xiangfeidexiaohuo/op-mosdns ./feeds/packages/net/mosdns
+rm -rf ./feeds/packages/net/mosdns
+cp -r -f ./feeds/xiangfeidexiaohuo/op-mosdns ./feeds/packages/net/mosdns
 
 
 # Modify default IP
