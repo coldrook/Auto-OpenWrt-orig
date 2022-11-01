@@ -9,7 +9,7 @@
 # Description: Source code update checker
 #
 
-name: Update-Checker
+name: Update_Checker
 
 env:
   REPO_URL_Lede: https://github.com/openwrt/openwrt
@@ -39,7 +39,6 @@ jobs:
     - name: Get Commit Hash
       id: getHash
       run: |
-      
         git clone --depth 1 $REPO_URL_Lede -b $REPO_BRANCH_Lede $REPO_PATH_Lede
         cd $REPO_PATH_Lede
         echo "commitHash_Lede=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
@@ -72,7 +71,6 @@ jobs:
         path: .commitHash_All
         key: HEAD-${{ steps.combHeader.outputs.commitHash_All }}
    
-
     - name: Save New Commit Hash
       if: steps.cacheHash.outputs.cache-hit != 'true'
       run: |
@@ -94,5 +92,4 @@ jobs:
         token: ${{ secrets.ACTIONS_ORIG_PAT }}
         repository: ${{ github.repository }}
         retain_days: 1
-        keep_minimum_runs: 1
-        
+        keep_minimum_runs: 5
