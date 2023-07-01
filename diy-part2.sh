@@ -15,12 +15,11 @@ svn export https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-file
 sed -i "s/\.\.\/\.\./\$\(TOPDIR\)\/feeds\/luci/g" ./package/add/luci-app-filetransfer/Makefile
 cp -af ./package/add/luci-app-filetransfer/po/zh-cn  ./package/add/luci-app-filetransfer/po/zh_Hans
 
-##补充汉化       
-#cp -r -f ./feeds/xiangfeidexiaohuo/files/udpxy.lua #./feeds/luci/applications/luci-app-udpxy/luasrc/model/cbi
+rm -rf package/feeds/xiangfeidexiaohuo/luci-app-turboacc
 
-##fixed mosdns
-#rm -rf ./feeds/packages/net/mosdns
-#cp -r -f ./feeds/xiangfeidexiaohuo/op-mosdns ./feeds/packages/net/mosdns
+##
+sed -i "53iLUCI_LANG.zh-cn=\$(LUCI_LANG.zh_Hans)" feeds/luci/luci.mk
+sed -i "54iLUCI_LANG.zh-tw=\$(LUCI_LANG.zh_Hant)" feeds/luci/luci.mk
 
 
 # Modify default IP
@@ -29,8 +28,5 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 ##加入作者信息
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='OpenWrt.orig@autocc-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' autocc'/g" package/base-files/files/etc/openwrt_release
-
-sed -i "s/# CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn is not set/CONFIG_PACKAGE_luci-i18n-quickstart-zh-cn=y/g" .config
-sed -i "s/# CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn is not set/CONFIG_PACKAGE_luci-i18n-filetransfer-zh-cn=y/g" .config
 
 # welcome test
