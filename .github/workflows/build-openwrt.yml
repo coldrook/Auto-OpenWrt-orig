@@ -95,11 +95,6 @@ jobs:
         git pull --depth 1 origin dev
         git branch --set-upstream-to=origin/dev master
     
-    - name: luci-app-romupdate
-      run: |
-        cd openwrt/package    
-        git clone https://github.com/coldrook/luci-app-romupdate.git
-    
     - name: luci-theme-argonn
       run: |
         cd openwrt/package 		
