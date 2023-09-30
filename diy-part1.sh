@@ -22,6 +22,7 @@ echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >
 #sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
 #sed -i "1isrc-git xiangfeidexiaohuo https://github.com/xiangfeidexiaohuo/openwrt-packages\n" feeds.conf.default
 #sed -i "2isrc-git ipkg https://github.com/xiangfeidexiaohuo/op-ipkg\n" feeds.conf.default
+echo -e "\nsrc-git xiangfeidexiaohuo https://github.com/xiangfeidexiaohuo/openwrt-packages" >> feeds.conf.default
 
 mkdir -p files/usr/share
 mkdir -p files/etc/
