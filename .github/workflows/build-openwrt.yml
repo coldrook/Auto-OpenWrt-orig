@@ -103,30 +103,18 @@ jobs:
         echo "luci-app-openclash" >> .git/info/sparse-checkout
         git pull --depth 1 origin dev
         git branch --set-upstream-to=origin/dev master
-    
-    - name: luci-theme-argonn
-      run: |
-        cd openwrt/package 		
-        git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argonn
-        
-    #- name: luci-app-adguardhome
-    #  run: |
-   #   cd openwrt/package 
-     #   git clone https://github.com/uamrws/luci-app-adguardhome.git
-    
+  
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        
-   
+           
     - name: lenyu
       run: |
         cd openwrt 
         bash  lenyu.sh
-
 
     - name: Update feeds
       run: cd openwrt
