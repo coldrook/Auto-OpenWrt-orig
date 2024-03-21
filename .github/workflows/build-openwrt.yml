@@ -23,8 +23,7 @@ on:
     
   #schedule:
      #- cron: 00 16 */2 * *
-    
-  
+      
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-23.05
@@ -173,7 +172,6 @@ jobs:
         cd openwrt 
         bash  rename.sh
     
-
     - name: Organize files
       id: organize
       if: env.UPLOAD_FIRMWARE == 'true' && !cancelled()
