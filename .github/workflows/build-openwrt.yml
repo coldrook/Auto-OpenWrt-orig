@@ -103,10 +103,10 @@ jobs:
         cd openwrt 
         bash  lenyu.sh
 
-    #- name: Update feeds
-    #  run: cd openwrt
-    #    ./scripts/feeds update -a
-    #    ./scripts/feeds install -a
+    - name: Update feeds
+      run: cd openwrt
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
