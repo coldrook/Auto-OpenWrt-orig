@@ -60,7 +60,7 @@ jobs:
         swap-storage: true
     
     - name: Clone Repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@main
 
     - name: Initialization environment
       env:
@@ -219,7 +219,7 @@ jobs:
               
     - name: Create release
       id: release
-      uses: ncipollo/release-action@v1.11.1
+      uses: ncipollo/release-action@main
       #if: steps.tag.outputs.status == 'success' && !cancelled()
       with:
         name: ${{ env.release_name }}
@@ -229,13 +229,13 @@ jobs:
         artifacts: ${{ env.FIRMWARE }}/*
 
     - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2
+      uses: Mattraks/delete-workflow-runs@main
       with:
         retain_days: 2
         keep_minimum_runs: 5
 
     - name: Remove old Releases
-      uses: Vucko130/delete-older-releases@v0.2.1
+      uses: Vucko130/delete-older-releases@master
       #if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
         repo: ${{ github.repository }}
